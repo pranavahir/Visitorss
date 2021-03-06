@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Actions} from 'react-native-router-flux';
@@ -36,3 +37,38 @@ const styles = StyleSheet.create({
     marginRight:30
   }
 });
+*/
+
+import React from 'react';
+import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {Actions} from 'reqct-native-router-flux'
+export default function Header(props){
+  const onAdd = () => {
+    Actions.Add();
+  }
+  return(
+    <View style={styles.Container}>
+      <Text style={styles.Text}>{props.title}</Text>
+      <Text style={styles.Text}>{props.description}</Text>
+      <TouchableOpacity onPress={}>
+        <Text style={style.Text}>Add</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const styles = StyleSheet.create({
+  Container:{
+    width:450,
+    height:80,
+    backgroundColor:'#add8e6',
+    justifyContent:'space-between',
+    alignItems:'center',
+    flexDirection:'row'
+  },
+  Text:{
+    color:'black',
+    fontSize:20
+  }
+
+})

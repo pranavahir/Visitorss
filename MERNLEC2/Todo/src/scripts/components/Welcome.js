@@ -1,43 +1,51 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import {Actions} from 'react-native-router-flux';
-
-export default function Welcome() {
-  const onBtnClick = () => {
-    Actions.Home();
-  };
-
-  return (
-    <View style={styles.WelcomeContainer}>
-      <Text style={styles.headerText}>Welcome to todo List</Text>
-      <TouchableOpacity onPress={onBtnClick} style={styles.btn}>
-        <Text style={styles.btnText}>Get inside</Text>
-      </TouchableOpacity>
+import {View, Text, TouchableOpacity, StyleSheet, ImageBackground} from 'react-native';
+import bgImage from '../../../images/todo.jpg'
+import { Actions } from 'react-native-router-flux';
+export default function Welcome(){
+  const onClick = () =>{
+      Actions.Home();
+  }
+  return(
+    <ImageBackground source={bgImage} style={styles.bg}>
+    <View style={styles.Header}>
+      <Text style={styles.Htext}>Welcome to Todo's!</Text>
+      <View>
+        <TouchableOpacity style={styles.Btn} onPress={onClick}>
+          <Text style={styles.BtnText}>List Todo's</Text>
+        </TouchableOpacity>
+      </View>
     </View>
-  );
+    </ImageBackground>
+  )
 }
-
 const styles = StyleSheet.create({
-  WelcomeContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  Header:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
   },
-  headerText: {
-    fontSize: 18,
-    marginBottom: 10,
+  Htext:{
+    fontSize:25,
+    fontWeight:'bold',
+    color:'#000080'
   },
-  btn: {
-    width: 150,
-    height: 50,
-    borderRadius: 45,
-    borderColor: 'blue',
-    backgroundColor: '#000080',
-    alignItems: 'center',
-    padding: 10,
+  Btn:{
+    height:50,
+    width:130,
+    borderRadius:50,
+    borderWidth:2,
+    backgroundColor:'#add8e6',
+    borderColor:'black',
+    padding:12
   },
-  btnText: {
-    fontSize: 16,
-    color: 'white',
+  BtnText:{
+    fontSize:20,
+    fontWeight:'bold'
   },
-});
+  bg:{
+    height:null,
+    width:null,
+    flex:1
+  }
+})

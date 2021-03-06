@@ -1,3 +1,4 @@
+/*
 import axios from 'axios';
 import React, {useState} from 'react';
 import {
@@ -84,3 +85,43 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
+import React, {useState} from 'react';
+import {View, TextInput, StyleSheet } from 'react-native'
+export default function Add(){
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  return(
+    <View style={styles.IP}>
+     <View style={style.banner}>
+    <Text>Add Todo's</Text>
+       </View> 
+    <TextInput
+    style={styles.IPtext}
+    value={title}
+    onChangeText={(Text) => setTitle(Text) }
+    placeholder="Enter Title"
+    />
+    <TextInput
+    style={styles.IPtext}
+    value={description}
+    onChangeText={(Text) => setDescription(Text)}
+    placeholder="Enter Description"/>
+    
+    <View>
+      <TouchableOpacity style={styles.btn}>
+        <Text style={styles.btnText}>Submit</Text>
+      </TouchableOpacity>
+    </View>
+    </View>
+  )
+}
+
+style = StyleSheet.create({
+    IP:{
+      flex:1,
+      alignItems:'center',
+    },
+    banner:
+
+})
